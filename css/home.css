@@ -1,0 +1,57 @@
+
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cfc5bf; /* Fundo escuro */
+    margin: 0;
+}
+
+button:hover {
+    background-color: #dfd5cb;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    background-color: #f87b06;
+    margin-top: 46px;
+}
+
+/* Estilo para a seção "Sobre" */
+.about {
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 800px; /* Limitar a largura da seção */
+    border-radius: 8px;
+    text-align: center; /* Centraliza o texto dentro da seção */
+}
+
+/* Título centralizado */
+.about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os parágrafos e lista */
+.about p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-align: justify; /* Justifica o texto */
+}
+
+.about ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: justify; /* Justifica o texto */
+}
+
+.about ul li {
+    margin-bottom: 10px;
+    text-align: justify; /* Justifica o texto */
+}
+
+.about strong {
+    color: #FF8C00;
+}

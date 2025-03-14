@@ -1,0 +1,102 @@
+.main-header {
+    background-color: #f87b06;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.main-header .logo {
+    flex: 1;
+}
+
+.main-header .logo img {
+    max-width: 70px;
+    height: auto;
+}
+
+.main-header .search-bar {
+    flex: 2;
+    text-align: center;
+    color: #fff;
+}
+
+.main-header .search-bar input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    color: #000000;
+    background-color: #fff;
+}
+
+.main-header .search-bar button {
+    padding: 8px 20px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8%;
+}
+
+.main-header .brand-name {
+    flex: 1;
+    text-align: right;
+}
+
+.main-header .brand-name h1 {
+    margin: 0;
+    color: #fff;
+}
+
+
+.brand-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-name a{
+    text-decoration: none;
+}
+
+.brand-name h2{
+    color: #000000;
+    margin-right: 30px;
+    font-size: 20px;
+}
+
+.brand-name i{
+    margin-right: 25px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all .5s ease;
+    color: #fff;
+}
+
+.brand-name i:hover{
+    transform: translateY(-5px);
+    color: rgb(32, 32, 221);
+}
+
+.sub-header {
+    background-color: #cc640e;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.sub-header .sub-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-header .sub-menu li {
+    display: inline-block;
+}
+
+.sub-header .sub-menu li a {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.sub-header .sub-menu li a:hover {
+    background-color: #ebebeb;
+}
