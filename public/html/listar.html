@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../css/listar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="../css/cabecalho.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../js/cadastrar.js"></script>
+<script src="../js/busca.js"></script>
+<script src="../js/listar.js"></script>
+    
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="../img/logo.png" alt="logo" class="img_logo_header">
+        </div>
+        <div class="search-bar">
+          <input type="text" id="busca" placeholder="Pesquisar Contato">
+          <button type="submit" onclick="buscarContato()">Buscar</button>
+      </div>
+        <div class="brand-name">
+            <h2>Agenda Cyberfox</h2>
+        </div>
+    </header>
+    <div class="sub-header">
+        <ul class="sub-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cadastrar.html">Adicionar</a></li>
+            <li><a href="listar.html">Listar</a></li>
+            <li><a href="editar.html">Editar</a></li>
+            <li><a href="excluir.html">Excluir</a></li>
+        </ul>
+    </div>
+
+    <div class="ordenacao">
+        <button onclick="ordenarPor('nome')">Ordem Alfabética</button>
+        <button onclick="ordenarPor('mais_recente')">Mais Recente</button>
+        <button onclick="ordenarPor('mais_antigo')">Mais Antigo</button>
+    </div>
+
+    <main>
+        <section class="about">
+          <h2>Lista de Contatos</h2>
+          <table id="tabelaUsuarios" border="1" style="width: 80%; margin: 20px auto; text-align: center;">
+            <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Idade</th>
+                  <th>Telefone</th>
+                  <th>Atualizado em</th>
+                </tr>
+              </thead>
+              
+            <tbody></tbody>
+          </table>
+        </section>
+      </main>
+      
+
+    <footer>
+        <p>&copy; 2025 Agenda de Contatos Cyberfox. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        let usuarios = [];
+        
+        function carregarUsuarios() {
+          fetch('http://localhost:3000/api/users')
+            .then(res => res.json())
+            .then(data => {
+              usuarios = data;
+              renderizarTabela(usuarios);
+            })
+            .catch(err => {
+              console.error('Erro ao buscar usuários:', err);
+              alert('Erro ao carregar usuários.');
+            });
+        }
+        
+        function renderizarTabela(lista) {
+          const tbody = document.querySelector('#tabelaUsuarios tbody');
+          tbody.innerHTML = '';
+        
+          lista.forEach(usuario => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td>${usuario.id}</td>
+              <td>${usuario.nome}</td>
+              <td>${usuario.email}</td>
+              <td>${usuario.idade}</td>
+              <td>${usuario.telefone}</td>
+<td>${new Date(usuario.alterado).toLocaleString()}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+        
+        function ordenarPor(tipo) {
+          let listaOrdenada = [...usuarios];
+        
+          if (tipo === 'nome') {
+            listaOrdenada.sort((a, b) => a.nome.localeCompare(b.nome));
+          } else if (tipo === 'mais_recente') {
+            listaOrdenada.sort((a, b) => new Date(b.atualizado_em) - new Date(a.atualizado_em));
+          } else if (tipo === 'mais_antigo') {
+            listaOrdenada.sort((a, b) => new Date(a.atualizado_em) - new Date(b.atualizado_em));
+          }
+        
+          renderizarTabela(listaOrdenada);
+        }
+        
+        // carregar ao abrir a página
+        document.addEventListener('DOMContentLoaded', carregarUsuarios);
+        
+        document.addEventListener('DOMContentLoaded', () => {
+  const resultadoBusca = localStorage.getItem('resultadoBusca');
+  if (resultadoBusca) {
+    const usuarios = JSON.parse(resultadoBusca);
+    renderizarTabela(usuarios);
+    localStorage.removeItem('resultadoBusca');
+  } else {
+    carregarUsuarios();
+  }
+});
+        </script>
+        
+        
+</body>
+</html>
