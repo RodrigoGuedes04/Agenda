@@ -1,71 +1,94 @@
-# Getting Started with Create React App
+# 📂 Agenda de Contatos Cyberfox
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Uma aplicação web simples para cadastro, edição, exclusão e listagem de contatos.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🗂️ Estrutura do Projeto
 
-### `npm start`
+```
+Agenda/
+├── controllers/           # Lógica de controle da aplicação
+├── node_modules/          # Dependências do Node.js
+├── public/                # Arquivos públicos (HTML, CSS, JS)
+├── routes/                # Definição das rotas da API
+├── sql/                   # Scripts SQL para o banco de dados
+├── db.js                  # Configuração da conexão com o banco de dados
+├── lembretes.txt          # Notas e lembretes do desenvolvedor
+├── package.json           # Configurações e dependências do projeto
+├── package-lock.json      # Controle de versões das dependências
+├── server.js              # Arquivo principal do servidor
+└── README.md              # Documentação do projeto
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Funcionalidades
 
-### `npm test`
+- Cadastro de contatos com nome, email, idade e telefone
+- Edição e exclusão de contatos existentes
+- Listagem de contatos com ordenação (alfabética, recente, antigo)
+- Busca de contatos por nome
+- Armazenamento da data/hora da última alteração (`alterado`)
+- API RESTful para comunicação entre frontend e backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Tecnologias Utilizadas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Backend:** Node.js, Express
+- **Banco de Dados:** MySQL
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔧 Como Rodar o Projeto Localmente
 
-### `npm run eject`
+1. **Clone o repositório:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/RodrigoGuedes04/Agenda.git
+cd Agenda
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Instale as dependências:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Configure o banco de dados:**
 
-## Learn More
+- Tenha o MySQL instalado e em execução.
+- Use os scripts da pasta `sql/` para criar o banco e a tabela.
+- Atualize `db.js` com suas credenciais de acesso ao MySQL.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Inicie o servidor:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+node server.js
+```
 
-### Code Splitting
+5. **Acesse a aplicação:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Abra o navegador e acesse: `http://localhost:3000/html/index.html`
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📌 Endpoints da API
 
-### Making a Progressive Web App
+- `GET /api/users` – Lista todos os usuários
+- `POST /api/users` – Cadastra um novo usuário
+- `PUT /api/users/:id` – Atualiza os dados de um usuário existente
+- `DELETE /api/users/:id` – Remove um usuário
+- `GET /api/users?search=nome` – Busca usuários pelo nome
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
+📄 Licença
 
-### Advanced Configuration
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Feito por Cyberfox
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# Projeto-Agenda" 
+(https://github.com/RodrigoGuedes04)

@@ -31,7 +31,7 @@ form label {
 }
 
 /* Estilo dos campos de entrada */
-form input[type="email"]{
+form input[type="number"]{
     width: 100%;
     margin-bottom: 15px;
     border: 1px solid #ddd;
@@ -42,7 +42,7 @@ form input[type="email"]{
 }
 
 /* Efeito de foco nos campos de entrada */
-form input[type="email"]:focus{
+form input[type="number"]:focus{
     border-color: #007bff;
     outline: none;
 }
