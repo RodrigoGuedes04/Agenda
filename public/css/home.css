@@ -1,9 +1,9 @@
-
 /* Estilo geral */
 body {
     font-family: Arial, sans-serif;
-    background-color: #cfc5bf; /* Fundo escuro */
+    background-color: #cfc5bf;
     margin: 0;
+    box-sizing: border-box;
 }
 
 button:hover {
@@ -23,33 +23,30 @@ footer {
 .about {
     padding: 40px 20px;
     margin: 20px auto;
-    max-width: 800px; /* Limitar a largura da seção */
+    max-width: 800px;
     border-radius: 8px;
-    text-align: center; /* Centraliza o texto dentro da seção */
+    text-align: center;
 }
 
-/* Título centralizado */
 .about h2 {
     font-size: 28px;
     margin-bottom: 20px;
 }
 
-/* Estilo para os parágrafos e lista */
-.about p {
+.about p,
+.about ul {
     font-size: 16px;
     margin-bottom: 15px;
-    text-align: justify; /* Justifica o texto */
+    text-align: justify;
 }
 
 .about ul {
     list-style-type: none;
     padding-left: 0;
-    text-align: justify; /* Justifica o texto */
 }
 
 .about ul li {
     margin-bottom: 10px;
-    text-align: justify; /* Justifica o texto */
 }
 
 .about strong {
