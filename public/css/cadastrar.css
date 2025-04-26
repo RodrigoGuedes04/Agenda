@@ -1,9 +1,9 @@
+
 /* Estilo geral */
 body {
     font-family: Arial, sans-serif;
-    background-color: #cfc5bf;
+    background-color: #cfc5bf; /* Fundo escuro */
     margin: 0;
-    box-sizing: border-box;
 }
 
 button:hover {
@@ -19,14 +19,17 @@ form {
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
 }
 
+/* Título do formulário */
 form h2 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
 }
 
+/* Estilo dos rótulos */
 form label {
     display: block;
     font-size: 1rem;
@@ -34,6 +37,7 @@ form label {
     color: #555;
 }
 
+/* Estilo dos campos de entrada */
 form input[type="text"],
 form input[type="email"],
 form input[type="tel"],
@@ -47,15 +51,16 @@ form input[type="number"] {
     margin-right: 10px;
 }
 
-/* Efeito de foco */
+/* Efeito de foco nos campos de entrada */
 form input[type="text"]:focus,
 form input[type="email"]:focus,
-form input[type="tel"]:focus,
+form input[type="tel"]:focus
 form input[type="number"]:focus {
     border-color: #007bff;
     outline: none;
 }
 
+/* Estilo do botão de envio */
 form button {
     width: 100%;
     padding: 12px;
@@ -68,39 +73,16 @@ form button {
     transition: background-color 0.3s ease;
 }
 
+/* Efeito de hover no botão */
 form button:hover {
     background-color: #ebebeb;
 }
 
+/* Ajuste de espaçamento entre o formulário e o conteúdo */
 section.about {
     margin-top: 40px;
 }
 
 .about h2 {
     text-align: center;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    form {
-        padding: 15px;
-    }
-
-    form h2 {
-        font-size: 1.5rem;
-    }
-
-    form label,
-    form input,
-    form button {
-        font-size: 1rem;
-    }
-
-    form input {
-        padding: 8px;
-    }
-
-    section.about {
-        padding: 0 10px;
-    }
 }
